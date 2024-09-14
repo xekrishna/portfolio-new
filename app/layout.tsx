@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Cursor from "@/components/cursor";
+import Cursor from "@/components/ui/cursor";
+import { defaultOptions } from "@/data/options";
+import ContextMenu from "@/components/ui/right-click-menu";
 
 
 
@@ -20,6 +22,7 @@ export default function RootLayout({
         className={`antialiased`}
       >
         <Cursor/>
+        <ContextMenu options={defaultOptions} />
         {children}
       </body>
     </html>

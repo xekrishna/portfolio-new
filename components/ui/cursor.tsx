@@ -16,7 +16,7 @@ const Cursor = () => {
             });
         };
 
-        const handleMouseClick = (event: MouseEvent) => {
+        const handleMouseClick = () => {
             setPointerSize('w-4 h-4')
             setTimeout(() => {
                 setPointerSize('h-1 w-1');
