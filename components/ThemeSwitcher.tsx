@@ -19,7 +19,7 @@ export function ThemeSwitcher() {
         <input 
           type="checkbox" 
           checked={theme === 'dark'}
-          onChange={() => setTheme(theme === 'light' ? 'dark' : 'light')} 
+          onChange={() => setTheme(theme === 'dark' ? 'light' : 'dark')} 
         />
         <span className="slider"></span>
       </label>

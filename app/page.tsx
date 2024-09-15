@@ -1,7 +1,11 @@
+import Contact from "@/components/Contact";
+import Hero from "@/components/Hero";
+
 const Home = () => {
   return (
-    <main className="dark:bg-black bg-white">
-      <h1 className="dark:text-white text-black dark:bg-black">Hello</h1>
+    <main className="dark:bg-[#151515] bg-white flex flex-col gap-2 justify-center items-center p-2">
+      <Hero/>
+      <Contact/>
     </main>
   )
 }

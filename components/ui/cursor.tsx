@@ -35,14 +35,14 @@ const Cursor = () => {
         <>
             {/* Outer Circle */}
             <motion.div
-                className="absolute top-0 left-0 w-4 h-4 bg-transparent border dark:border-white border-black rounded-full pointer-events-none z-50"
+                className="absolute top-0 left-0 w-4 h-4 bg-transparent border dark:border-white border-black rounded-full pointer-events-none z-[9999999]"
                 animate={{ x: cursorPosition.x, y: cursorPosition.y }}
                 transition={{ ease: "easeOut", duration: 0.4 }}
                 style={{ translateX: '-50%', translateY: '-50%' }}
             />
             {/* Inner Dot */}
             <motion.div
-                className={`absolute top-0 left-0 dark:bg-white bg-black rounded-full pointer-events-none z-50 ${pointerSize}`}
+                className={`absolute top-0 left-0 dark:bg-white bg-black rounded-full pointer-events-none z-[9999999] ${pointerSize}`}
                 animate={{ x: cursorPosition.x, y: cursorPosition.y }}
                 transition={{ duration: 0.1 }}
                 style={{ translateX: '-50%', translateY: '-50%' }}

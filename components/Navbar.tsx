@@ -2,7 +2,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher"
 
 const Navbar = () => {
     return(
-        <main>
+        <main className="fixed z-10 w-full">
             <div>
 
             </div>

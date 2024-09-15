@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 html{
   cursor: none;
-  overflow: hidden;
+}
+
+*{
+  cursor: none;
 }
 
 body {
@@ -17,7 +22,7 @@ body {
   }
 }
 
-/* From Uiverse.io by satyamchaudharydev */ 
+ 
 /* The switch - the box around the slider */
 .switch {
   display: block;
@@ -42,7 +47,7 @@ body {
 /* The slider */
 .slider {
   position: absolute;
-  cursor: pointer;
+  cursor: none;
   top: 0;
   left: 0;
   right: 0;
