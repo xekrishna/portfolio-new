@@ -44,14 +44,14 @@ const ContextMenu: React.FC<ContextMenuProps> = ({ options }) => {
         <>
             {isVisible && (
                 <motion.ul
-                    className="absolute bg-menu border border-menuBorder/50 text-white rounded-xl shadow-lg p-1 z-50"
+                    className="fixed bg-navMain border border-navItem text-white rounded-xl shadow-lg p-1 z-50"
                     style={{ left: menuPosition.x, top: menuPosition.y }}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <motion.ul className=" bg-menu border border-menuBorder/60 text-white rounded-lg shadow-lg p-2 z-50 w-max"
+                    <motion.ul className=" bg-navMain border border-navItem/60 text-white rounded-lg shadow-lg p-2 z-50 w-max"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
@@ -59,7 +59,7 @@ const ContextMenu: React.FC<ContextMenuProps> = ({ options }) => {
                     {options.map((option, index) => (
                         <li
                             key={index}
-                            className="px-2 py-2 hover:bg-menuBorder cursor-pointer rounded-lg"
+                            className="px-2 py-2 hover:bg-navItem cursor-pointer rounded-lg"
                             onClick={() => {
                                 option.onClick();
                                 setIsVisible(false); 

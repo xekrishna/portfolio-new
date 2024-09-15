@@ -1,13 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const FloatingNav = ({
   navItems,
@@ -20,56 +16,26 @@ export const FloatingNav = ({
   }[];
   className?: string;
 }) => {
-  const { scrollYProgress } = useScroll();
-
-  const [visible, setVisible] = useState(false);
-
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
-    if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
-
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(false);
-      } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
-      }
-    }
-  });
+  const pathname = usePathname()
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        initial={{
-          opacity: 1,
-          y: -100,
-        }}
-        animate={{
-          y: visible ? 0 : -100,
-          opacity: visible ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.2,
-        }}
         className={cn(
-          "flex max-w-max items-center justify-center  fixed top-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-navMain  z-[5000] px-4 py-2 space-x-4",
+          "flex max-w-max items-center justify-center fixed top-7 backdrop-blur-md inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-navMain/70 z-[5000] p-1 shadow-lg",
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
+        {navItems.map((navItem, idx) => (
           <Link
             key={`link=${idx}`}
             href={navItem.link}
             className={cn(
-              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+              "relative dark:text-neutral-50 px-6 py-2 justify-center text-center items-center flex space-x-1 text-neutral-600  rounded-full hover:text-neutral-500 min-w-16",
+              pathname === navItem.link ? "bg-navItem/70" : "", navItem.name === 'Home' ? 'dark:hover:bg-gradient-to-r to-90% from-navItem/50 to-transparent' : 'dark:hover:bg-gradient-to-l to-90% from-navItem/50 to-transparent' 
             )}
           >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
+            <span className="hidden sm:block text-sm font-inter font-medium">{navItem.name}</span>
           </Link>
         ))}
       </motion.div>
