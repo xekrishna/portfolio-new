@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Cursor from "@/components/ui/cursor";
-import { defaultOptions } from "@/data/options";
 import ContextMenu from "@/components/ui/right-click-menu";
 import Navbar from "@/components/Navbar";
 import { Providers } from "./providers";
@@ -71,13 +70,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable} ${montserrat.variable} ${instrument_sans.variable} ${rozha.variable}`}>
       <body
-        className={` `}
+        className={` `} suppressHydrationWarning
       >
         <Providers>
           <Navbar/>
           <FloatingNav navItems={navItems}/>
           <Cursor/>
-          <ContextMenu options={defaultOptions} />
+          <ContextMenu/>
           {children}
         </Providers>
       </body>
