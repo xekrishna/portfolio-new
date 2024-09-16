@@ -31,7 +31,7 @@ export const FloatingNav = ({
             key={`link=${idx}`}
             href={navItem.link}
             className={cn(
-              "relative dark:text-neutral-50 px-6 py-2 justify-center text-center items-center flex space-x-1 text-neutral-600  rounded-full hover:text-neutral-500 min-w-16",
+              "relative dark:text-neutral-50 px-6 py-3 justify-center text-center items-center flex space-x-1 text-neutral-600  rounded-full hover:text-neutral-500 min-w-16",
               pathname === navItem.link ? "dark:bg-navItem/70 bg-[#C6C6C6]/50" : "", navItem.name === 'Home' ? 'dark:hover:bg-gradient-to-r to-90% from-navItem/50 to-transparent' : 'dark:hover:bg-gradient-to-l to-90% from-navItem/50 to-transparent' 
             )}
           >

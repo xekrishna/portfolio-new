@@ -1,6 +1,8 @@
+import Contact from "./Contact"
+
 const About = () => {
     return(
-        <main className="w-full bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] dark:from-[#282828] dark:to-[#101010] from-[#EFEFEF] to-[#C6C6C6] p-5 justify-center items-center h-max min-h-[100vh] rounded-xl flex flex-col ">
+        <main className="w-full bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] dark:from-[#282828] dark:to-[#101010] from-[#EFEFEF] to-[#C6C6C6] p-5 justify-center items-center h-max min-h-[100vh] rounded-xl flex flex-col dark:shadow-[0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3)] shadow-[0px_-10px_20px_rgba(0,0,0,0.3),10px_0px_20px_rgba(0,0,0,0.3),-10px_0px_20px_rgba(0,0,0,0.3)] pb-36">
             <div className="flex flex-col gap-5 max-w-[65%] mt-40 ">
                 <div className="flex items-center gap-4 px-2">
                     <div className="h-3 w-3 dark:bg-white bg-black rounded-full dark:shadow-[0_0_10px_7px_#FFFFFF30] shadow-[0_0_10px_7px_#00000030]"/>
@@ -21,6 +23,7 @@ const About = () => {
                     Forever curious — forever pushing the boundaries of what&apos;s possible in tech and design.
                 </span>
             </div>
+            <Contact/>
             
         </main>
     )
