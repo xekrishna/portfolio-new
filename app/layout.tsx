@@ -68,12 +68,15 @@ export default function RootLayout({
   ];
 
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable} ${montserrat.variable} ${instrument_sans.variable} ${rozha.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${poppins.variable} ${montserrat.variable} ${instrument_sans.variable} ${rozha.variable}`}
+    >
+      <head>
+        <link rel="shortcut icon" href="/assets/xe.png" type="image/x-icon" />
+      </head>
       <body
         className={` `} suppressHydrationWarning
       >
         <Providers>
-          
           <Navbar/>
           <FloatingNav navItems={navItems}/>
           <Cursor/>

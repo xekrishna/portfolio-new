@@ -23,15 +23,16 @@ const Project = () => {
               key={index}
               onClick={() => handleClick(item.slug)}
               className={cn(
-                "h-[40rem] min-w-[60rem] max-w-[60rem] border border-black dark:border-white/10 rounded-xl p-2 transition-all duration-500",
-                "bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] dark:from-[#282828] dark:to-[#101010] from-[#EFEFEF] to-[#C6C6C6] relative",
+                "h-[40rem] min-w-[60rem] max-w-[60rem] border border-black/20 dark:border-white/10 rounded-xl p-2 transition-all duration-500",
+                "bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] dark:from-[#282828] dark:to-[#101010] from-[#EFEFEF] to-[#C6C6C6] relative", 
+                "shadow-[0_10px_50px_rgba(0,0,0,0.3)] hover:shadow-[0_10px_25px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_100px_rgba(60,60,60,0.7)] dark:hover:shadow-[0_10px_50px_rgba(60,60,60,0.7)]"
               )}
             >
                 <div className="
                 h-[10%] bottom-0 left-0 m-2 rounded-lg w-[98.3%] absolute bg-gradient-to-b from-transparent to-black/70"/>
                 <div
                 className={cn(
-                  "border border-black dark:border-white/20 p-5 h-full w-full rounded-lg overflow-hidden transition-all duration-500",
+                  "border border-black/50 dark:border-white/20 p-5 h-full w-full rounded-lg overflow-hidden transition-all duration-500",
                   "dark:bg-[#282828] bg-[#EFEFEF] transition-colors duration-300", item.accent 
                 )}
               >

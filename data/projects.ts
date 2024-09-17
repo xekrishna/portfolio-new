@@ -13,7 +13,7 @@ export const projectData = [{
     desc: 'Redesigning the Discord UI and features', 
     href:'https://xecord.vercel.app/' , 
     slug:'discord-clone',
-    accent:'', 
-    image:'',
+    accent:'hover:bg-[#b597c9]/70  dark:hover:bg-[#291A3E]/90', 
+    image:'/assets/discord.png',
     date: 'August 2024'
 }]
