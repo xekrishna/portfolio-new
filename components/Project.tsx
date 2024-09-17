@@ -1,17 +1,27 @@
+"use client"
+
 import { projectData } from "@/data/projects";
 import { DotBackground } from "./ui/dot-background";
 import { BsArrowRight } from 'react-icons/bs';
 import Browser from "./ui/browser";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 const Project = () => {
+    const router = useRouter()
+
+    const handleClick = (slug?: string) => {
+        router.push(`work/${slug}`)
+    }
+
   return (
     <main className="w-full h-max dark:shadow-[0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3)] shadow-[0px_-10px_20px_rgba(0,0,0,0.3),10px_0px_20px_rgba(0,0,0,0.3),-10px_0px_20px_rgba(0,0,0,0.3)] rounded-xl">
       <DotBackground>
-        <main className="h-max flex flex-col items-center w-full justify-center gap-10">
+        <main className="h-max flex flex-col items-center w-full justify-center gap-10" >
           {projectData.map((item, index) => (
             <div
               key={index}
+              onClick={() => handleClick(item.slug)}
               className={cn(
                 "h-[40rem] min-w-[60rem] max-w-[60rem] border border-black dark:border-white/10 rounded-xl p-2 transition-all duration-500",
                 "bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] dark:from-[#282828] dark:to-[#101010] from-[#EFEFEF] to-[#C6C6C6] relative",

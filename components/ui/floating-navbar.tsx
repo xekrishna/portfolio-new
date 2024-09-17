@@ -17,6 +17,9 @@ export const FloatingNav = ({
   className?: string;
 }) => {
   const pathname = usePathname()
+  if(pathname.startsWith('/work')){
+    return null
+  }
 
   return (
     <AnimatePresence mode="wait">

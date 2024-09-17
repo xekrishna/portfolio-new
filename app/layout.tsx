@@ -73,6 +73,7 @@ export default function RootLayout({
         className={` `} suppressHydrationWarning
       >
         <Providers>
+          
           <Navbar/>
           <FloatingNav navItems={navItems}/>
           <Cursor/>

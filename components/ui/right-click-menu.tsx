@@ -1,24 +1,21 @@
+// components/ui/context-menu.tsx
 'use client';
 
 import { useEffect, useState } from "react";
 import { motion } from 'framer-motion';
-import {  getDefaultOptions } from "@/data/options";
+import { getDefaultOptions } from "@/data/options";
 import { useNavigation } from "@/hooks/useRouter";
-
-
 
 const ContextMenu = () => {
     const { back, forward, reload } = useNavigation();
+    const defaultOptions = getDefaultOptions(back, forward, reload);
 
-  // Generate the default options using navigation functions
-  const defaultOptions = getDefaultOptions(back, forward, reload);
     const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
     const [isVisible, setIsVisible] = useState(false);
 
-    // Right-click event listener
     useEffect(() => {
         const handleContextMenu = (event: MouseEvent) => {
-            event.preventDefault(); // Prevent default right-click menu
+            event.preventDefault();
             setMenuPosition({
                 x: event.clientX,
                 y: event.clientY,
@@ -27,11 +24,11 @@ const ContextMenu = () => {
         };
 
         const handleClick = () => {
-            setIsVisible(false); // Hide the menu when clicking elsewhere
+            setIsVisible(false);
         };
 
-        window.addEventListener('contextmenu', handleContextMenu); // Listen for right-click
-        window.addEventListener('click', handleClick); // Hide menu on normal click
+        window.addEventListener('contextmenu', handleContextMenu);
+        window.addEventListener('click', handleClick);
 
         return () => {
             window.removeEventListener('contextmenu', handleContextMenu);
@@ -50,15 +47,13 @@ const ContextMenu = () => {
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.2 }}
                 >
-                    <motion.ul className=" dark:bg-navMain/30 bg-[#DCDCDC]/50 border border-navItem/60 dark:text-white/70 text-black rounded-lg shadow-lg p-2 z-50 w-max"
+                    <motion.ul
+                        className="dark:bg-navMain/30 bg-[#DCDCDC]/50 border border-navItem/60 dark:text-white/70 text-black rounded-lg shadow-lg p-2 z-50 w-max"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.8 }}
                         transition={{ duration: 0.2 }}
                     >
-                        
-
-                        {/* Render navigation options */}
                         {defaultOptions.map((navOption, index) => (
                             <li
                                 key={`nav-${index}`}
