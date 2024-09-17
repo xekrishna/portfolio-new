@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
     return(
-        <main className='w-[100%] mt-[1px] overflow-hidden'>
-            <div className="w-[99%] h-[50rem] absolute bg-gradient-to-b from-transparent from-60% dark:to-black to-white z-[100] rounded-xl dark:shadow-[0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3)] shadow-[0px_-10px_20px_rgba(0,0,0,0.3),10px_0px_20px_rgba(0,0,0,0.3),-10px_0px_20px_rgba(0,0,0,0.3)]"/>
+        <main className='w-[100%] mt-[1px]  relative'>
+            <div className="w-full h-full absolute bg-gradient-to-b from-transparent from-60% dark:to-black to-white z-[100] rounded-xl dark:shadow-[0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3)] shadow-[0px_-10px_20px_rgba(0,0,0,0.3),10px_0px_20px_rgba(0,0,0,0.3),-10px_0px_20px_rgba(0,0,0,0.3)]"/>
             <DotBackground>
-                <div className="relative ">
+                <div className="relative h-full w-full max-h-[50rem] overflow-hidden">
                         
-                    <div className="w-full h-full absolute bg-gradient-to-b from-transparent from-60% dark:to-black to-white z-[100] rounded-3xl rounded-b-none shadow-[0px_-10px_20px_rgba(0,0,0,0.3),10px_0px_20px_rgba(0,0,0,0.3),-10px_0px_20px_rgba(0,0,0,0.3)]"></div>
-                    <div className="flex flex-col h-[40rem] w-[60rem] rounded-3xl rounded-b-none mt-[10rem] p-3 pb-0 border dark:border-white/50 border-black/50 tracking-tight bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] dark:from-[#282828] dark:to-[#101010] from-[#EFEFEF] to-[#C6C6C6] overflow-hidden relative ">
+                    <div className="w-full h-full absolute bg-gradient-to-b from-transparent from-60% dark:to-black to-white z-[100] rounded-3xl rounded-b-none "></div>
+                    <div className="flex flex-col h-[40rem] w-[60rem] rounded-3xl rounded-b-none mt-[10rem] p-3 pb-0 border dark:border-white/50 border-black/50 tracking-tight bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] dark:from-[#282828] dark:to-[#101010] from-[#EFEFEF] to-[#C6C6C6] overflow-hidden relative —  ">
                     <motion.div
                              className="absolute -top-20 left-0 h-[1200px] w-20 bg-white/10 backdrop-blur-md z-50 rotate-45"
                              

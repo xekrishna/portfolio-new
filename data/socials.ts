@@ -9,5 +9,5 @@ export const socialData = [{
 },{
     title: 'Instagram', desc: '@kwishy.kun', href: 'https://instagram.com/kwishy.kun'
 },{
-    title: 'Twitter( X )', desc: '@xekrishna', href:'https://x.com/xekrishna/'
+    title: 'Twitter( X )', desc: '@mayankbisht69', href:'https://x.com/xekrishna/'
 },]

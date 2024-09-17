@@ -1,4 +1,4 @@
-const Project = ({name, desc, href, accent, }) => {
+const Project = ({name, type, desc, href, accent, image}) => {
     return(
         <main>
 
