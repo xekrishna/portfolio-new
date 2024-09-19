@@ -55,8 +55,8 @@ const Hero = () => {
       </div>
 
       {/* Mobile Version (below lg) */}
-      <div className="lg:hidden mt-20 h-[50vh] ">
-        <div className="w-full h-[90%] absolute bg-gradient-to-b from-transparent from-60% dark:to-black to-white z-[1]" />
+      <div className="lg:hidden mt-20 h-[50vh] relative">
+        <div className="w-full h-full absolute bg-gradient-to-b from-transparent from-60% dark:to-black to-white z-[1]" />
 
         <div className="flex flex-col justify-center items-start gap-4 px-4 py-8">
           <div className="flex items-center gap-4 px-2">

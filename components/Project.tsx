@@ -15,8 +15,8 @@ const Project = () => {
   };
 
   return (
-    <main className="w-full h-max dark:shadow-[0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3)] shadow-[0px_-10px_20px_rgba(0,0,0,0.3),10px_0px_20px_rgba(0,0,0,0.3),-10px_0px_20px_rgba(0,0,0,0.3)] rounded-xl">
-      <div className="w-full h-full absolute bg-gradient-to-t from-transparent from-60% dark:to-black to-white z-[10] rounded-xl dark:shadow-[0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3)] shadow-[0px_-10px_20px_rgba(0,0,0,0.3),10px_0px_20px_rgba(0,0,0,0.3),-10px_0px_20px_rgba(0,0,0,0.3)] overflow-hidden" />
+    <main className="w-full h-max dark:shadow-[0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3),0px_0px_0px_rgba(0,0,0,0.3)] shadow-[0px_-10px_20px_rgba(0,0,0,0.3),10px_0px_20px_rgba(0,0,0,0.3),-10px_0px_20px_rgba(0,0,0,0.3)] rounded-xl relative">
+      <div className="w-full h-full top-0 absolute bg-gradient-to-t from-transparent from-60% dark:to-black to-white z-[1] rounded-t-xl" />
       <DotBackground>
         <main className="h-max flex flex-col items-center w-full justify-center gap-5 lg:gap-10">
           {projectData.map((item, index) => (

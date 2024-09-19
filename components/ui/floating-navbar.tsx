@@ -35,6 +35,10 @@ export const FloatingNav = ({
     }
   }, [activeIndex]);
 
+  useEffect(() => {
+    console.log("FloatingNav rendered");
+  }, [pathname, navItems, activeIndex, position]);
+
   if (pathname.startsWith("/work")) {
     return null;
   }
@@ -44,12 +48,14 @@ export const FloatingNav = ({
       {/* Animated light following the active link */}
       <motion.div
         className={cn(
-          "fixed top-[1.6rem] left-1/2 transform -translate-x-1/2 h-[0.5rem] w-[2rem] bg rounded-full z-[5000000] dark:bg-white/80 bg-black/80 ",
+          "fixed top-[1.6rem] left-1/2 transform -translate-x-1/2 h-[0.5rem] w-[2rem] bg rounded-full z-[5000000] dark:bg-white/80 bg-black/80",
           "dark:shadow-[0_0_20px_10px_rgba(255,255,255,0.2),0_0_40px_30px_rgba(255,255,255,0.1)]",
           "shadow-[0_0_20px_10px_rgba(0,0,0,0.2),0_0_40px_30px_rgba(0,0,0,0.1)]"
         )}
         animate={{ x: position }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        onAnimationComplete={() => console.log("Animation complete")}
+        onUpdate={() => console.log("Position updated:", position)}
       />
       <motion.div
         ref={navRef}
@@ -58,25 +64,27 @@ export const FloatingNav = ({
           className
         )}
       >
-        {navItems.map((navItem, idx) => (
-          <Link
-            key={idx}
-            href={navItem.link}
-            className={cn(
-              "relative dark:text-neutral-50 px-6 py-3 justify-center text-center items-center flex space-x-1 text-neutral-600 rounded-full hover:text-neutral-500 min-w-16",
-              pathname === navItem.link
-                ? "dark:bg-navItem/70 bg-[#C6C6C6]/50"
-                : "",
-              navItem.name === "Home"
-                ? "dark:hover:bg-gradient-to-r to-90% from-navItem/50 to-transparent"
-                : "dark:hover:bg-gradient-to-l to-90% from-navItem/50 to-transparent"
-            )}
-          >
-            <span className="text-sm font-inter font-medium">
-              {navItem.name}
-            </span>
-          </Link>
-        ))}
+        {navItems.map((navItem, idx) => {
+          return (
+            <Link
+              key={navItem.link + idx}
+              href={navItem.link}
+              className={cn(
+                "relative dark:text-neutral-50 px-6 py-3 justify-center text-center items-center flex space-x-1 text-neutral-600 rounded-full hover:text-neutral-500 min-w-16",
+                pathname === navItem.link
+                  ? "dark:bg-navItem/70 bg-[#C6C6C6]/50"
+                  : "",
+                navItem.name === "Home"
+                  ? "dark:hover:bg-gradient-to-r to-90% from-navItem/50 to-transparent"
+                  : "dark:hover:bg-gradient-to-l to-90% from-navItem/50 to-transparent"
+              )}
+            >
+              <span className="text-sm font-inter font-medium">
+                {navItem.name}
+              </span>
+            </Link>
+          );
+        })}
       </motion.div>
     </AnimatePresence>
   );
