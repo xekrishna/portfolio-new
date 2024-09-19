@@ -21,7 +21,6 @@ export const FloatingNav = ({
   const [position, setPosition] = useState<number>(0);
   const navRef = useRef<HTMLDivElement>(null);
 
-  // Update active index based on the current path
   useEffect(() => {
     const currentIndex = navItems.findIndex((item) => item.link === pathname);
     setActiveIndex(currentIndex);
@@ -31,7 +30,7 @@ export const FloatingNav = ({
     if (activeIndex !== null && navRef.current) {
       const activeItem = navRef.current.children[activeIndex] as HTMLElement;
       if (activeItem) {
-        setPosition(activeItem.offsetLeft + activeItem.offsetWidth / 2 - 104); // Adjust the position to center the light
+        setPosition(activeItem.offsetLeft + activeItem.offsetWidth / 2 - 104);
       }
     }
   }, [activeIndex]);
@@ -45,7 +44,7 @@ export const FloatingNav = ({
       {/* Animated light following the active link */}
       <motion.div
         className={cn(
-          "fixed top-[1.6rem] left-1/2 transform -translate-x-1/2 h-[0.5rem] w-[2rem] bg rounded-full z-[500] dark:bg-white/80 bg-black/80 ",
+          "fixed top-[1.6rem] left-1/2 transform -translate-x-1/2 h-[0.5rem] w-[2rem] bg rounded-full z-[5000000] dark:bg-white/80 bg-black/80 ",
           "dark:shadow-[0_0_20px_10px_rgba(255,255,255,0.2),0_0_40px_30px_rgba(255,255,255,0.1)]",
           "shadow-[0_0_20px_10px_rgba(0,0,0,0.2),0_0_40px_30px_rgba(0,0,0,0.1)]"
         )}
@@ -55,7 +54,7 @@ export const FloatingNav = ({
       <motion.div
         ref={navRef}
         className={cn(
-          "flex max-w-max items-center justify-center fixed top-7 backdrop-blur-md inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-navMain/70 z-[5000] p-1 shadow-lg",
+          "flex max-w-max items-center justify-center fixed top-7 backdrop-blur-md inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-navMain/70 z-[5000000] p-1 shadow-lg",
           className
         )}
       >
@@ -73,7 +72,7 @@ export const FloatingNav = ({
                 : "dark:hover:bg-gradient-to-l to-90% from-navItem/50 to-transparent"
             )}
           >
-            <span className="hidden sm:block text-sm font-inter font-medium">
+            <span className="text-sm font-inter font-medium">
               {navItem.name}
             </span>
           </Link>

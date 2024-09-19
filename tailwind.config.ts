@@ -1,21 +1,21 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
- 
+
 const svgToDataUri = require("mini-svg-data-uri");
- 
+
 const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
- 
+
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  darkMode: 'class',
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./data/**/*.{js,ts}", 
+    "./data/**/*.{js,ts}",
   ],
   theme: {
     fontFamily: {
@@ -23,14 +23,17 @@ module.exports = {
       poppins: "var(--font-poppins)",
       monsterrat: "var(--font-monsterrat)",
       instrument: "var(--font-instrument)",
-      rozha: 'var(--font-rozha)'
+      rozha: "var(--font-rozha)",
     },
     extend: {
       colors: {
         navMain: "#2D2D2D",
         navItem: "#3D3D3D",
-       
-      }
+      },
+      dropShadow: {
+        custom:
+          "0 -2px 4px rgba(255, 215, 0, 0.6), 0 2px 4px rgba(0, 0, 255, 0.6)",
+      },
     },
   },
   plugins: [
@@ -57,8 +60,7 @@ module.exports = {
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
     },
-  ]
-
+  ],
 };
 
 function addVariablesForColors({ addBase, theme }: any) {
@@ -66,10 +68,8 @@ function addVariablesForColors({ addBase, theme }: any) {
   const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });
 }
-
-
